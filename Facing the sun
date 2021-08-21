@@ -1,0 +1,25 @@
+//Given an array H representing heights of buildings. You have to count the buildings which will see the sunrise (Assume : Sun rise on the side of array starting point).
+
+void main(){
+  List<int> numbers = [4,2,5,6,4,7]; // height of buildings represented by numbers
+ 
+  int seeSun = 0; // number of buildings that see the sun
+ 
+  // to check if the building being checked is higher than the highest building 
+  // if it's higher then it'll see the sun , otherwise it'll not 
+  // gets updated if the new building is higher than the predecessor
+  // initial value is 0 because the first element will always face the sun
+   int highest = 0;
+   
+   // goes through building and comparing them to the highest building so far
+  for(int i = 0 ;i < numbers.length ; i++){
+    if(numbers[i] > highest){
+      seeSun++;
+      highest = numbers[i];
+    }
+  }
+  print('${seeSun}');
+}
+
+first attempt
+Expected : 4 , Output : 4
