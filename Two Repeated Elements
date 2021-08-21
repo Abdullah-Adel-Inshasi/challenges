@@ -1,0 +1,32 @@
+// You are given an array of N+2 integer elements. All elements of the array are in range 1 to N. Also,
+// all elements occur once except two numbers which occur twice. Find the two repeating numbers.
+
+Code: 
+
+void main(){
+
+// list of numbers to test the algorithim
+ List<int> numbers = [1,2,1,3,4,3,5,5,2];
+ 
+ // adds each number only once 
+ List<int> nonRepeated = [];
+ 
+ // if we tried to enter a number in nonRepeated that already exists there it'll be added here
+ // it keeps track of duplicated Numbers
+ List<int> repeated = [];
+ 
+ for(int i = 0; i< numbers.length ; i++){
+   if(nonRepeated.contains(numbers[i])){
+     repeated.add(numbers[i]);
+   }else{
+     nonRepeated.add(numbers[i]);
+   }
+ }
+ 
+ for(int i in repeated){
+   print('$i');
+ }
+}
+
+
+Expected : 1 3 5 2 , OutPut 1 3 5 2
